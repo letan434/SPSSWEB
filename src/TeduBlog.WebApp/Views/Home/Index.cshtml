@@ -9,10 +9,15 @@
 <header class="masthead" style="background-image: url('/assets/img/home-bg.jpg')">
     <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="col-md-5 col-lg-4 col-xl-3">
                 <div class="site-heading">
-                    <h1>@_config.Value.AppName</h1>
+                    <h2>@_config.Value.AppName</h2>
                     <span class="subheading">@_config.Value.AppSlogan</span>
+                </div>
+            </div>
+            <div class="col-md-5 col-lg-4 col-xl-3">
+                <div class="site-heading">
+                   <div>sss</div>
                 </div>
             </div>
         </div>
@@ -21,26 +26,29 @@
 <!-- Main Content-->
 <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
-        <div class="col-md-10 col-lg-8 col-xl-7">
             @foreach (var item in Model.LatestPosts)
             {
-                <!-- Post preview-->
+                <div class="col col-md-10 col-lg-8 col-xl-7">
                 <div class="post-preview">
-                    <a href="@string.Format(UrlConsts.PostDetails,item.Id)" title="@item.Name">
-                        <h2 class="post-title">@item.Name</h2>
-                        <h3 class="post-subtitle">@item.Description</h3>
-                    </a>
+                    <div>
+                        <img width="300px" height="auto" src="https://i.pinimg.com/564x/e7/ed/61/e7ed6183642fce6558a713e507e17df8.jpg"/>
+                        <a href="@string.Format(UrlConsts.PostDetails,item.Slug)" title="@item.Name">
+                            <h2 class="post-title">@item.Name</h2>
+                        </a>
+                        <h5 class="post-subtitle">@item.Description</h5>
+                    </div>
+                    
                     @* <p class="post-meta">
                 Posted by
                 <a href="@string.Format(UrlConsts.Author,item.AuthorUserName)">@item.AuthorName</a>
                 on @item.DateCreated.ToLongTimeString()
                 </p> *@
                 </div>
-                <!-- Divider-->
-                <hr class="my-4" />
+                </div>
+                
             }
             <!-- Pager-->
-            <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="@UrlConsts.Posts">Older Posts →</a></div>
-        </div>
     </div>
+    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="@UrlConsts.Posts">Older Posts →</a></div>
+
 </div>

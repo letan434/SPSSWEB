@@ -41,10 +41,10 @@ namespace TeduBlog.WebApp.Controllers
             });
         }
 
-        [Route("post/{id}")]
-        public async Task<IActionResult> Details([FromRoute] Guid id)
+        [Route("post/{Slug}")]
+        public async Task<IActionResult> Details([FromRoute] string Slug)
         {
-            var post = await _unitOfWork.Posts.GetById(id);
+            var post = await _unitOfWork.Posts.GetBySlug(Slug);
             var category = await _unitOfWork.PostCategories.GetBySlug(post.CategorySlug);
             var tags = await _unitOfWork.Posts.GetTagObjectsByPostId(post.Id);
             return View(new PostDetailViewModel()
