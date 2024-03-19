@@ -7,9 +7,9 @@
 @model HomeViewModel
 <!-- Page Header-->
 <header class="masthead" style="background-image: url('/assets/img/home-bg.jpg')">
-    <div class="container position-relative px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-5 col-lg-4 col-xl-3">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-md-5 col-lg-4 col-xl-6">
                 <div class="site-heading">
                     <h2>@_config.Value.AppName</h2>
                     <span class="subheading">@_config.Value.AppSlogan</span>
@@ -31,7 +31,7 @@
                 <div class="col col-md-10 col-lg-8 col-xl-7">
                 <div class="post-preview">
                     <div>
-                        <img width="300px" height="auto" src="https://i.pinimg.com/564x/e7/ed/61/e7ed6183642fce6558a713e507e17df8.jpg"/>
+                        <img width="300" height="180" src="@_config.Value.BackendApiUrl@item.Thumbnail" />
                         <a href="@string.Format(UrlConsts.PostDetails,item.Slug)" title="@item.Name">
                             <h2 class="post-title">@item.Name</h2>
                         </a>
